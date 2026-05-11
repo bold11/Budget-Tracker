@@ -1,0 +1,14 @@
+src
+--- components
+-- Navbar.jsx          Navbar - links pages
+-- TransactionList.jsx All transactions
+-- CategoryList.jsx    All categories
+-- BudgetList.jsx      All budgets per category
+-- Dashboard.jsx       Summary: total income/expenses, balance
+
+--- services
+   -- api.js   fetch -> api connection 
+
+--- App.jsx main app, sets up routing between pages
+-- main.jsx  entry point, renders App into the browser
+-- index.css global styles

@@ -1,0 +1,244 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --bt-primary:       #10b981;   /* emerald green — money vibes */
+  --bt-primary-dark:  #059669;
+  --bt-primary-light: #d1fae5;
+  --bt-primary-muted: rgba(16,185,129,0.1);
+  --bt-danger:        #ef4444;
+  --bt-warning:       #f59e0b;
+  --bt-blue:          #3b82f6;
+  --bt-radius:        10px;
+  --bt-radius-lg:     14px;
+  --bt-shadow:        0 2px 12px rgba(0,0,0,0.07);
+  --bt-shadow-hover:  0 6px 24px rgba(0,0,0,0.12);
+  --bt-transition:    all 0.2s ease;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Navbar ---------- */
+.bt-navbar {
+  background: #0f172a !important;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.2);
+  padding: 0.75rem 1.5rem;
+}
+.bt-navbar .navbar-brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  color: #fff !important;
+}
+.bt-navbar .navbar-brand .brand-dot {
+  color: var(--bt-primary);
+}
+.bt-navbar .nav-link {
+  color: rgba(255,255,255,0.7) !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.75rem !important;
+  border-radius: 7px;
+  transition: var(--bt-transition);
+}
+.bt-navbar .nav-link:hover,
+.bt-navbar .nav-link.active {
+  color: #fff !important;
+  background: rgba(255,255,255,0.08);
+}
+
+/* ---------- Page wrapper ---------- */
+.page-content {
+  padding: 2rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ---------- Page titles ---------- */
+.page-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--bs-body-color);
+}
+.page-title span {
+  color: var(--bt-primary);
+}
+
+/* ---------- Cards ---------- */
+.bt-card {
+  border: 1px solid var(--bs-border-color) !important;
+  border-radius: var(--bt-radius-lg) !important;
+  box-shadow: var(--bt-shadow);
+  transition: var(--bt-transition);
+}
+.bt-card:hover {
+  box-shadow: var(--bt-shadow-hover);
+}
+
+/* Stat cards with colored left border */
+.stat-card {
+  border-left: 4px solid transparent !important;
+}
+.stat-card.income  { border-left-color: var(--bt-primary) !important; }
+.stat-card.expense { border-left-color: var(--bt-danger)  !important; }
+.stat-card.balance { border-left-color: var(--bt-blue)    !important; }
+
+/* ---------- Tables ---------- */
+.bt-table {
+  border-radius: var(--bt-radius);
+  overflow: hidden;
+  box-shadow: var(--bt-shadow);
+}
+.bt-table thead th {
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.9rem 1rem;
+  border-bottom: none;
+  background: #0f172a !important;
+  color: #cbd5e1 !important;
+}
+.bt-table tbody tr {
+  transition: background 0.12s ease;
+}
+.bt-table tbody tr:hover {
+  background-color: var(--bt-primary-muted) !important;
+}
+.bt-table td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  font-size: 0.93rem;
+}
+
+/* ---------- Badges ---------- */
+.badge-income {
+  background: #d1fae5;
+  color: #065f46;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3em 0.7em;
+  border-radius: 99px;
+}
+.badge-expense {
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3em 0.7em;
+  border-radius: 99px;
+}
+/* Dark mode badge adjustments */
+[data-bs-theme="dark"] .badge-income  { background: rgba(16,185,129,0.2); color: #6ee7b7; }
+[data-bs-theme="dark"] .badge-expense { background: rgba(239,68,68,0.2);  color: #fca5a5; }
+
+/* ---------- Buttons ---------- */
+.btn-bt-primary {
+  background: var(--bt-primary);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.45rem 1.1rem;
+  transition: var(--bt-transition);
+}
+.btn-bt-primary:hover {
+  background: var(--bt-primary-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(16,185,129,0.35);
+}
+.btn-bt-danger {
+  background: var(--bt-danger);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.82rem;
+  transition: var(--bt-transition);
+}
+.btn-bt-danger:hover {
+  background: #dc2626;
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-bt-warning {
+  background: var(--bt-warning);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.82rem;
+  transition: var(--bt-transition);
+}
+.btn-bt-warning:hover {
+  background: #d97706;
+  color: #fff;
+}
+
+/* ---------- Form controls ---------- */
+.form-control, .form-select {
+  border-radius: 8px !important;
+  font-family: 'Figtree', sans-serif;
+  font-size: 0.93rem;
+}
+.form-control:focus, .form-select:focus {
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.2) !important;
+  border-color: var(--bt-primary) !important;
+}
+
+/* ---------- Filter card ---------- */
+.filter-card {
+  border-radius: var(--bt-radius) !important;
+  border: 1px solid var(--bs-border-color) !important;
+  background: var(--bs-body-bg);
+}
+
+/* ---------- Progress bars ---------- */
+.progress {
+  border-radius: 99px !important;
+  background: var(--bs-border-color);
+}
+.progress-bar {
+  border-radius: 99px !important;
+  transition: width 0.6s ease !important;
+}
+
+/* ---------- Inline edit row highlight ---------- */
+tr.editing-row td {
+  background: var(--bt-primary-muted) !important;
+}
+
+/* ---------- Amount colors ---------- */
+.amount-income  { color: var(--bt-primary); font-weight: 600; }
+.amount-expense { color: var(--bt-danger);  font-weight: 600; }

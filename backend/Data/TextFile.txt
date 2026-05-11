@@ -1,0 +1,15 @@
+﻿Install-Package Microsoft.EntityFrameworkCore.Sqlite -v 9.0.11
+
+Install-Package Microsoft.EntityFrameworkCore.Tools -v 9.0.11
+
+
+Swagger Setup:
+
+Install-Package Swashbuckle.AspNetCore -v 9.0.6
+
+
+Add Migrations and Update the Database:
+
+Add-Migration -Context BudgetTrackerContext -o Data\MOMigrations Initial
+
+Update-Database -Context BudgetTrackerContext 
